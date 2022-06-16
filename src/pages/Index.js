@@ -4,28 +4,35 @@ import { Link } from "react-router-dom"
 
 const Index = (props) => {
 
-    const [ newForm, setNewForm ] = useState({
 
-});
+    const loaded = () => {
+            return props.jobs.map(job => (
+                <li key={job._id} className="job">
+                    <Link to={`/jobapplications/${job._id}`}>
+                        <div>
+                        <h2>{job.DateApplied}</h2>
+                        <h2>{job.PositionTitle}</h2>
+                        <h2>{job.Company}</h2>
+                        <h2>{job.Description}</h2>
+                        <h2>{job.Salary}</h2>
+                        <h2>{job.ContactInfo}</h2>
+                        <h2>{job.Logo}</h2>
+                        <h2>{job.Contacted}</h2>
+                        <button></button>
+                        </div>
+                    </Link>
+                </li>
+            ));
+    }
 
-    const handleChange = (event) => {
-        setNewForm({
-            ...newForm,
-            [event.target.name]: event.target.value
-        });
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        props.createJob(newForm);
-    };
-
-    
+    const loading = () => {
+        return <h2>Loading ...</h2>
+    }
 
     return (
-    <div>
-        <h1>Index</h1>
-    </div>
+        <div>
+        { props.jobs ? <ol style={{textAlign: "left"}}>{loaded()}</ol> : loading() }
+        </div>
   )
 }
 

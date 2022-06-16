@@ -8,8 +8,6 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
 
-// PAGES
-import Login from './pages/Login';
 
 
 function App() {
@@ -24,7 +22,6 @@ function App() {
    <Header user={user} />
    <Main />
    <Footer />
-   <Login />
    
     </div>
   );
