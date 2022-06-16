@@ -9,13 +9,13 @@ import Dashboard from "../pages/Dashboard"
 // component libraries
 import { Route } from "react-router-dom";
 
-const Main = () => {
+const Main = (props) => {
 
     
   return (
     <main className="container">
    <Route exact path="/">
-        <Dashboard />
+        <Dashboard user={props.user}/>
     </Route>
    <Route path="/jobapplications">
         <Index />

@@ -3,7 +3,7 @@ import { login, logout } from "../services/firebase"
 
 const Header = (props) => {
   return (
-    <nav className="nav">
+    <nav className="navbar navbar-brand bg-light">
     <Link to='/'>
         <div>Dashboard</div>
     </Link>
@@ -16,7 +16,7 @@ const Header = (props) => {
     <Link to='/jobapplications/:id'>
         <div>Show Page</div>
     </Link>
-    <ul>
+    <ul className="login">
         {
             props.user
             ? <li onClick={logout}>Logout</li>
