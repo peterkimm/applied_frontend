@@ -1,3 +1,6 @@
+// oauth
+import { useState, useEffect } from 'react';
+import { auth } from './services/firebase';
 
 import './App.css';
 // COMPONENTS
@@ -10,9 +13,15 @@ import Login from './pages/Login';
 
 
 function App() {
+  // oauth
+  const [ user, setUser ] = useState(null);
+    // use useEffect to observe object/changes to perform functionality
+    useEffect(() => {
+      auth.onAuthStateChanged(user => setUser(user));
+    }, []);
   return (
     <div className="App">
-   <Header />
+   <Header user={user} />
    <Main />
    <Footer />
    <Login />
