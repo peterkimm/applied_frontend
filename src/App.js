@@ -15,7 +15,10 @@ function App() {
   const [ user, setUser ] = useState(null);
     // use useEffect to observe object/changes to perform functionality
     useEffect(() => {
-      auth.onAuthStateChanged(user => setUser(user));
+      const unsubscribe = auth.onAuthStateChanged(user => setUser(user));
+      return () => {
+        unsubscribe();
+      }
     }, []);
   return (
     <div className="App">

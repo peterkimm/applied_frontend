@@ -10,6 +10,7 @@ import Dashboard from "../pages/Dashboard"
 import { Route } from "react-router-dom";
 
 const Main = (props) => {
+
 const [ jobs, setJobs ] = useState(null);
 
 const URL = 'http://localhost:4000/jobapplications/';
@@ -52,11 +53,10 @@ useEffect(()=> {
 
 
 
-
   return (
     <main className="container">
    <Route exact path="/">
-        <Dashboard />
+        <Dashboard user={props.user}/>
     </Route>
    <Route path="/jobapplications">
         <Index jobs={jobs} user={props.user}/>
