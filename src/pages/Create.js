@@ -23,16 +23,28 @@ const Create = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.createJob(newForm);
+        props.createJobs(newForm);
+        setNewForm({
+            DateApplied: '',
+            PositionTitle: '',
+            Company: '',
+            Description: '',
+            Salary: '',
+            ContactInfo: '',
+            Logo: '',
+            Contacted: ''
+    
+    })
     };
   return (
     <section>
+        <h1>CREATE New Job</h1>
     {props.user &&
     <form onSubmit={handleSubmit}>
  <input 
            value={newForm.DateApplied} 
            onChange={handleChange} 
-           name="name" 
+           name="DateApplied" 
            type="text" />
             <input 
            value={newForm.PositionTitle} 
@@ -75,7 +87,8 @@ const Create = (props) => {
     </form>
     }
     </section>
+    
   )
 }
 
-export default Create
+export default Create;

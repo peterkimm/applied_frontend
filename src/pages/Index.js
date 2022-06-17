@@ -7,6 +7,7 @@ const Index = (props) => {
 
     const loaded = () => {
             return props.jobs.map(job => (
+                <ul>
                 <li key={job._id} className="job">
                     <Link to={`/jobapplications/${job._id}`}>
                         <div>
@@ -22,6 +23,7 @@ const Index = (props) => {
                         </div>
                     </Link>
                 </li>
+                </ul>
             ));
     }
 
