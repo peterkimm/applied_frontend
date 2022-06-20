@@ -1,6 +1,25 @@
+// Variables
+$mainColor: #7bbde2;
+$redColor: #d63230;
+
+@mixin job-tiles {
+  background-color: #7bbde2;
+}
+
 .App {
   text-align: center;
 }
+// LOGIN PAGE //
+.login-page {
+  background-color: $mainColor;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// NAVBAR //
 nav {
   ul.login {
     margin: auto 0;
@@ -8,4 +27,43 @@ nav {
       list-style: none;
     }
   }
+}
+
+// DASHBOARD //
+.dashboard-jobs,
+.index-jobs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+  .job-tile {
+    width: 40%;
+    border: 1px solid black;
+    .job-tile-heading {
+      display: flex;
+      flex-direction: row;
+      margin: 5px;
+      justify-content: space-evenly;
+      .job-color {
+        background-color: $redColor;
+        width: 30px;
+        height: 30px;
+      }
+    }
+    img {
+      width: 20vw;
+      height: auto;
+    }
+    .job {
+      list-style: none;
+    }
+  }
+}
+
+// CREATE PAGE //
+.company-info,
+.job-info {
+  display: flex;
+  flex-direction: column;
 }

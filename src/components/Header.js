@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { login, logout } from "../services/firebase"
+import { login, logout } from "../services/firebase";
 
 const Header = (props) => {
   return (
@@ -7,15 +7,13 @@ const Header = (props) => {
     <Link to='/'>
         <div>Dashboard</div>
     </Link>
+     <Link to='/jobapplications'>
+        <div>My Jobs</div>
+    </Link>
     <Link to='/create'>
-        <div>Create new job applications</div>
+        <div>New Job</div>
     </Link>
-    <Link to='/jobapplications'>
-        <div>Job applications</div>
-    </Link>
-    <Link to='/jobapplications/:id'>
-        <div>Show Page</div>
-    </Link>
+   
     <ul className="login">
         {
             props.user
