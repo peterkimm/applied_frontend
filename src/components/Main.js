@@ -6,6 +6,7 @@ import Create from "../pages/Create";
 import Index from "../pages/Index";
 import Jobapp from "../pages/Jobapp";
 import Dashboard from "../pages/Dashboard";
+
 // component libraries
 import { Route } from "react-router-dom";
 
@@ -41,6 +42,32 @@ const Main = (props) => {
     });
     getJobs();
   };
+  //UPDATE
+const updateJobs = async(updatedJob, id) => {
+  if(!props.user) return;
+  const token = await props.user.getIdToken();
+  // matching up URL with backend
+  await fetch(URL + id, {
+      method: 'PUT',
+      headers: {
+          'Content-Type': 'Application/json',
+          'Authorization': 'Bearer ' + token
+      },
+      body: JSON.stringify(updatedJob)
+  });
+  getJobs();
+}
+
+// DELETE
+const deleteJobs = async (id) => {
+  if(!props.user) return;
+  const token = await props.user.getIdToken();
+  await fetch(URL + id, {
+      method: 'DELETE',
+      'Authorization': 'Bearer ' + token
+  });
+  getJobs();
+}
 
   useEffect(() => {
     if (props.user) {
@@ -61,11 +88,19 @@ const Main = (props) => {
       </Route>
       <Route
         path="/jobapplications/:id"
-        render={(routerProps) => <Jobapp jobs={jobs} {...routerProps} />}
+        render={(rp) => (
+        <Jobapp 
+        {...rp} 
+        jobs={jobs} 
+        updateJobs={updateJobs} 
+        deleteJobs={deleteJobs}
+        />)}
       />
+  
       <Route path="/create">
         <Create createJobs={createJobs} user={props.user} jobs={jobs} />
       </Route>
+      
     </main>
   );
 };
