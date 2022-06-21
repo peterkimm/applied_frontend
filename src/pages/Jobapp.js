@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 const Jobapp = (props) => {
   const id = props.match.params.id;
   const allJobs = props.jobs;
@@ -59,7 +59,7 @@ const Jobapp = (props) => {
   return (
     <div className="single-job">
       <div className="show-image">
-        <img src={job.Logo} className="show-logo" />
+        <img src={job.Logo} className="show-logo" alt={job.Company}/>
       </div>
       <h1>{job.Company}</h1>
       <h2>{job.PositionTitle}</h2>
