@@ -67,9 +67,8 @@ const Main = (props) => {
     await fetch(URL + id, {
       method: "DELETE",
       headers: {
-        Authorization: "Bearer " + token
-      }
-      ,
+        Authorization: "Bearer " + token,
+      },
     });
     getJobs();
   };

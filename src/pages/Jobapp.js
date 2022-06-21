@@ -50,7 +50,6 @@ const Jobapp = (props) => {
 
   // Remove Job
   const handleRemoveJob = (id) => {
-    console.log(id)
     props.deleteJobs(id);
     props.history.push("/");
   };

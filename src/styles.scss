@@ -1,9 +1,19 @@
 // Variables
-$mainColor: #7bbde2;
+$mainColor: #9ecae3;
+$darkBlue: #78c5f1;
 $redColor: #d63230;
 
 @mixin job-tiles {
   background-color: #7bbde2;
+}
+
+@keyframes login-grow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
 }
 
 .App {
@@ -11,14 +21,25 @@ $redColor: #d63230;
 }
 // LOGIN PAGE //
 .login-page {
+  animation-name: login-grow;
+  animation-duration: 3s;
   background-color: $mainColor;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  min-height: 100vh;
+  .login-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
 }
-
+.login-footer {
+  animation-name: login-grow;
+  animation-duration: 3s;
+  }
 // NAVBAR //
 nav {
   ul.login {
@@ -66,4 +87,14 @@ nav {
 .job-info {
   display: flex;
   flex-direction: column;
+}
+
+// FOOTER //
+footer {
+  position: absolute;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  bottom: 0;
 }
