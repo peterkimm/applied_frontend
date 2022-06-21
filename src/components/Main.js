@@ -28,6 +28,7 @@ const Main = (props) => {
     const data = await response.json();
     setJobs(data);
   };
+
   // CREATE
   const createJobs = async (job) => {
     if (!props.user) return;
@@ -42,32 +43,35 @@ const Main = (props) => {
     });
     getJobs();
   };
-  //UPDATE
-const updateJobs = async(updatedJob, id) => {
-  if(!props.user) return;
-  const token = await props.user.getIdToken();
-  // matching up URL with backend
-  await fetch(URL + id, {
-      method: 'PUT',
-      headers: {
-          'Content-Type': 'Application/json',
-          'Authorization': 'Bearer ' + token
-      },
-      body: JSON.stringify(updatedJob)
-  });
-  getJobs();
-}
 
-// DELETE
-const deleteJobs = async (id) => {
-  if(!props.user) return;
-  const token = await props.user.getIdToken();
-  await fetch(URL + id, {
-      method: 'DELETE',
-      'Authorization': 'Bearer ' + token
-  });
-  getJobs();
-}
+  //UPDATE
+  const updateJobs = async (updatedJob, id) => {
+    if (!props.user) return;
+    const token = await props.user.getIdToken();
+    // matching up URL with backend
+    await fetch(URL + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify(updatedJob),
+    });
+    getJobs();
+  };
+
+  // DELETE
+  const deleteJobs = async (id) => {
+    if (!props.user) return;
+    const token = await props.user.getIdToken();
+    await fetch(URL + id, {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    getJobs();
+  };
 
   useEffect(() => {
     if (props.user) {
@@ -75,7 +79,6 @@ const deleteJobs = async (id) => {
     } else {
       setJobs(null);
     }
-    // getJob();
   }, [props.user]);
 
   return (
@@ -89,18 +92,18 @@ const deleteJobs = async (id) => {
       <Route
         path="/jobapplications/:id"
         render={(rp) => (
-        <Jobapp 
-        {...rp} 
-        jobs={jobs} 
-        updateJobs={updateJobs} 
-        deleteJobs={deleteJobs}
-        />)}
+          <Jobapp
+            {...rp}
+            jobs={jobs}
+            updateJobs={updateJobs}
+            deleteJobs={deleteJobs}
+          />
+        )}
       />
-  
+
       <Route path="/create">
         <Create createJobs={createJobs} user={props.user} jobs={jobs} />
       </Route>
-      
     </main>
   );
 };

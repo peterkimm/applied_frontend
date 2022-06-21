@@ -34,6 +34,7 @@ const Create = (props) => {
       Logo: "",
       Contacted: "",
     });
+    // props.history.push("/");
   };
   return (
     <section>

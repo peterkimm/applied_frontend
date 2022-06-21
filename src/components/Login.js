@@ -1,12 +1,14 @@
 import React from "react";
-import { login, logout } from "../services/firebase";
+import { login } from "../services/firebase";
 
 function Login() {
   return (
     <div className="login-page">
       <div className="login-content">
-        <h1 className="login-image">APPLIED LOGO HERE</h1>
-        <button onClick={login}>Login</button>
+        <div className="logo">
+            <img src="https://github.com/peterkimm/applied_frontend/blob/master/src/images/applied-logo.png?raw=true"/>
+        </div>
+        <button className="btn btn-dark btn-lg btn-block" onClick={login}>Login</button>
       </div>
     </div>
   );

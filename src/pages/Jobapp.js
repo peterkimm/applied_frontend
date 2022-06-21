@@ -1,33 +1,59 @@
-import React from 'react';
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 const Jobapp = (props) => {
+
   const id = props.match.params.id;
   const allJobs = props.jobs;
   const job = allJobs.find((job) => job._id === id);
-  // enable acccess to edit
-  const [ editForm, setEditForm ] = useState(job);
+
+  // state for form
+  const [editForm, setEditForm] = useState(job);
+
+  // Handle change for form
   const handleChange = (event) => {
     setEditForm({
       ...editForm,
-      // override with computed property names
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     props.updateJobs(editForm, job._id);
     props.history.push("/");
-  
- // lifting up state
- const { DateApplied, PositionTitle, Company, Description, Salary, ContactInfo, Logo, Contacted } = editForm;
-  props.updateJobs({ DateApplied, PositionTitle, Company, Description, Salary, ContactInfo, Logo, Contacted }, job._id);
+
+    const {
+      DateApplied,
+      PositionTitle,
+      Company,
+      Description,
+      Salary,
+      ContactInfo,
+      Logo,
+      Contacted,
+    } = editForm;
+    props.updateJobs(
+      {
+        DateApplied,
+        PositionTitle,
+        Company,
+        Description,
+        Salary,
+        ContactInfo,
+        Logo,
+        Contacted,
+      },
+      job._id
+    );
   };
-  // delete functionality
+
+  // Remove Job
   const handleRemoveJob = (id) => {
     props.deleteJobs(id);
-    props.history.push('/');
+    props.history.push("/");
   };
+
 
  //display form state
  const [hideEditForm, setHideEditForm] = useState(true);
@@ -35,10 +61,9 @@ const Jobapp = (props) => {
   return (
     <div className="single-job">
 
-
-
       <div className='show-image'>
         <img src={job.Logo} className='show-logo'/>
+
       </div>
       <h1>{job.Company}</h1>
       <h2>{job.PositionTitle}</h2>
@@ -47,6 +72,7 @@ const Jobapp = (props) => {
       <p>Salary: ${job.Salary}</p>
       <p>Contact Info: {job.ContactInfo}</p>
       <p>Contacted: {job.Contacted}</p>
+
 
       <button onClick={() => setHideEditForm(false)}>Edit Job</button>
 
@@ -123,12 +149,10 @@ const Jobapp = (props) => {
              <input type="submit" value="Update Job"/> 
      </form>
      </div>
-      
+
       <button>Follow Up</button>
-      <a href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}>
-              
-            </a>
+      <a href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}></a>
     </div>
-  )
-}
+  );
+};
 export default Jobapp;

@@ -28,7 +28,12 @@ function App() {
           <Footer />
         </>
       ) : (
+        <>
         <Login />
+        <div className="login-footer">
+        <Footer/>  
+        </div>
+        </>
       )}
     </div>
   );
