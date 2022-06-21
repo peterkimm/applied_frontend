@@ -87,7 +87,7 @@ nav {
 .editFormOn{
   display:block;
   opacity: 1;
-
+  padding-bottom: 5rem;
 }
 .editFormOff{
   display: none;
@@ -103,10 +103,10 @@ nav {
 
 // FOOTER //
 footer {
-  position: absolute;
+  position: fixed;
   width: 100%;
   background-color: black;
   color: white;
   font-size: 12px;
-  bottom: 0;
+  bottom: 0px;
 }
