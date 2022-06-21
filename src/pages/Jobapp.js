@@ -28,8 +28,15 @@ const Jobapp = (props) => {
     props.deleteJobs(id);
     props.history.push('/');
   };
+
+ //display form state
+ const [hideEditForm, setHideEditForm] = useState(true);
+
   return (
     <div className="single-job">
+
+
+
       <div className='show-image'>
         <img src={job.Logo} className='show-logo'/>
       </div>
@@ -40,8 +47,15 @@ const Jobapp = (props) => {
       <p>Salary: ${job.Salary}</p>
       <p>Contact Info: {job.ContactInfo}</p>
       <p>Contacted: {job.Contacted}</p>
+
+      <button onClick={() => setHideEditForm(false)}>Edit Job</button>
+
+
      <button id="delete" onClick={() => handleRemoveJob(job._id)}>Delete Job</button>
-     <form onSubmit={handleSubmit}>
+
+    <div className={`editFormOn ${hideEditForm ? "editFormOff" : ""}`}>
+
+     <form className="editForm" onSubmit={handleSubmit}>
      <label for="company">Company</label>
               <input
                 value={editForm.Company}
@@ -108,6 +122,7 @@ const Jobapp = (props) => {
               />
              <input type="submit" value="Update Job"/> 
      </form>
+     </div>
       
       <button>Follow Up</button>
       <a href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}>

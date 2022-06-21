@@ -61,6 +61,18 @@ nav {
   }
 }
 
+
+//show page 
+.editFormOn{
+  display:block;
+  opacity: 1;
+
+}
+.editFormOff{
+  display: none;
+  opacity: 0;
+
+}
 // CREATE PAGE //
 .company-info,
 .job-info {
