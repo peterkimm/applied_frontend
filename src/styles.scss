@@ -1,6 +1,5 @@
 // Variables
 $mainColor: #9ecae3;
-$darkBlue: #78c5f1;
 $redColor: #d63230;
 
 @mixin job-tiles {
@@ -18,6 +17,7 @@ $redColor: #d63230;
 
 .App {
   text-align: center;
+  font-family: 'Mukta', sans-serif;
 }
 // LOGIN PAGE //
 .login-page {
@@ -42,10 +42,23 @@ $redColor: #d63230;
   }
 // NAVBAR //
 nav {
+  width: 100vw;
+  background-color: $mainColor;
+  a {
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+  }
+  .navbar-brand {
+    margin-left: 15px;
+  }
   ul.login {
     margin: auto 0;
+    padding: 0;
+    margin-right: 15px;
     li {
       list-style: none;
+      font-size: 15px;
     }
   }
 }

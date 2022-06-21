@@ -84,7 +84,7 @@ const Create = (props) => {
                 value={newForm.DateApplied}
                 onChange={handleChange}
                 name="DateApplied"
-                type="text"
+                type="date"
                 id="date"
               />
               <label for="description">Description</label>

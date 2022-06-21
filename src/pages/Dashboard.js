@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 
 const Dashboard = (props) => {
+
+  const colorFunction = () => {
+   
+  }
+
   const loaded = () => {
     return props.jobs.map((job) => (
       <div className="job-tile">
@@ -28,7 +33,6 @@ const Dashboard = (props) => {
   };
   return (
     <div className="dashboard">
-      <h1>Dashboard</h1>
 
       <div className="profile">
         {props.user ? (

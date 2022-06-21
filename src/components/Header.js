@@ -3,7 +3,9 @@ import { login, logout } from "../services/firebase";
 
 const Header = (props) => {
   return (
-    <nav className="navbar navbar-brand bg-light">
+    <nav className="navbar navbar-brand">
+    <Link to='/' className="navbar-brand">
+        <img src="https://github.com/peterkimm/applied_frontend/blob/master/src/images/applied-logo.png?raw=true" height={40} alt="applied logo"/>    </Link>
     <Link to='/'>
         <div>Dashboard</div>
     </Link>
