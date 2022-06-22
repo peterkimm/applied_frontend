@@ -80,7 +80,8 @@ nav {
       margin: 5px;
       justify-content: space-evenly;
       .job-color {
-        background-color: $redColor;
+        background-color: white;
+        border: 1px solid black;
         width: 30px;
         height: 30px;
       }

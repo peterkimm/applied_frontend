@@ -18,9 +18,11 @@ const Index = (props) => {
                 <h2>{job.Company}</h2>
                 <h2>{job.PositionTitle}</h2>
                 <h2>{job.Contacted}</h2>
-                <button></button>
               </div>
             </Link>
+            <a href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}>
+                  <button>Follow Up</button>
+                </a>
           </li>
         </ul>
       </div>
