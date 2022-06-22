@@ -71,6 +71,7 @@ nav {
   justify-content: center;
   gap: 10px;
   margin: 10px;
+  
   .job-tile {
     width: 40%;
     border: 1px solid black;
@@ -94,6 +95,9 @@ nav {
       list-style: none;
     }
   }
+}
+.profileImage {
+  border-radius: 50%;
 }
 
 
