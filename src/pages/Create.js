@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Create = (props) => {
   const [newForm, setNewForm] = useState({
@@ -34,7 +33,7 @@ const Create = (props) => {
       Logo: "",
       Contacted: "",
     });
-    // props.history.push("/");
+    props.history.push("/");
   };
   return (
     <section>

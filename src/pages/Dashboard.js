@@ -1,18 +1,36 @@
 import { Link } from "react-router-dom";
 
 const Dashboard = (props) => {
+  const parseDate = (date) => {
+    let ymd = date.split("-");
+    return new Date(ymd[0], ymd[1] - 1, ymd[2]);
+  };
 
-  const colorFunction = () => {
-   
-  }
+  const dateDiff = (first, second) => {
+    return Math.round((second - first) / (1000 * 60 * 60 * 24));
+  };
+
+  const getColor = (job) => {
+    let color;
+    let second = new Date();
+    let first = parseDate(job.DateApplied);
+    let diff = dateDiff(first, second);
+    if (diff < 7) {
+        color = "green";
+    } else if (diff > 7 && diff < 14) {
+        color = "yellow";
+    } else {
+        color = 'red';
+    }
+    return color;
+  };
 
   const loaded = () => {
     return props.jobs.map((job) => (
       <div className="job-tile">
-
         <div className="job-tile-heading">
-        <div className="job-color"></div>
-        <img className="job-tile-logo" src={job.Logo}></img>
+          <div className="job-color" style={{backgroundColor: getColor(job)}}></div>
+          <img className="job-tile-logo" src={job.Logo}></img>
         </div>
 
         <ul>
@@ -33,7 +51,6 @@ const Dashboard = (props) => {
   };
   return (
     <div className="dashboard">
-
       <div className="profile">
         {props.user ? (
           <>
@@ -45,9 +62,7 @@ const Dashboard = (props) => {
         )}
       </div>
 
-          <div className="dashboard-jobs">
-              {props.jobs && loaded()}
-              </div>
+      <div className="dashboard-jobs">{props.jobs && loaded()}</div>
     </div>
   );
 };
