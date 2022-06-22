@@ -71,6 +71,7 @@ nav {
   justify-content: center;
   gap: 10px;
   margin: 10px;
+  
   .job-tile {
     width: 40%;
     // border: 1px solid black;
@@ -106,6 +107,9 @@ text-decoration: none;
   a:hover {
     text-decoration: none;
   }
+}
+.profileImage {
+  border-radius: 50%;
 }
 
 //show page 

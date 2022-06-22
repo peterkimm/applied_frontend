@@ -61,7 +61,7 @@ const Dashboard = (props) => {
         {props.user ? (
           <>
             <h2>Welcome, {props.user.displayName}</h2>
-            <img src={props.user.photoURL} alt={props.user.displayName} />
+            <img className='profileImage' src={props.user.photoURL} alt={props.user.displayName} />
           </>
         ) : (
           <h2>Login to see your jobs!</h2>
