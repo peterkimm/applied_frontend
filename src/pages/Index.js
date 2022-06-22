@@ -27,11 +27,6 @@ const Index = (props) => {
     return color;
   };
 
-  
-
-  
-
-
   const [listJobs, setListJobs] = useState([]);
 
   useEffect(() => {
