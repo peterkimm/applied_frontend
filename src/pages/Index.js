@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const Index = (props) => {
   const loaded = () => {
     return props.jobs.map((job) => (
-      <div className="job-tile">
+      <div className="job-tile shadow p-3 mb-5 rounded">
         <div className="job-tile-heading">
-          <div className="job-color"></div>
+          <div className="job-color shadow p-3 mb-5 rounded"></div>
           <img className="job-tile-logo" src={job.Logo}></img>
         </div>
         <ul>

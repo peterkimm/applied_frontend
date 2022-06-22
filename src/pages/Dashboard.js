@@ -16,36 +16,42 @@ const Dashboard = (props) => {
     let first = parseDate(job.DateApplied);
     let diff = dateDiff(first, second);
     if (diff < 7) {
-        color = "green";
+      color = "green";
     } else if (diff > 7 && diff < 14) {
-        color = "yellow";
+      color = "yellow";
     } else {
-        color = 'red';
+      color = "red";
     }
     return color;
   };
 
   const loaded = () => {
     return props.jobs.map((job) => (
-      <div className="job-tile">
+      <div className="job-tile shadow p-3 mb-5 rounded">
         <div className="job-tile-heading">
-          <div className="job-color" style={{backgroundColor: getColor(job)}}></div>
+          <div
+            className="job-color shadow p-3 mb-5 rounded"
+            style={{ backgroundColor: getColor(job) }}
+          ></div>
           <img className="job-tile-logo" src={job.Logo}></img>
         </div>
-
-        <ul>
-          <li key={job._id} className="job">
-            <Link to={`/jobapplications/${job._id}`}>
-              <h4>Date Applied: {job.DateApplied}</h4>
-              <h3>{job.Company}</h3>
-              <p>{job.PositionTitle}</p>
-              <p>Contacted: {job.Contacted}</p>
-            </Link>
-            <a href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}>
-              <button>Follow Up</button>
-            </a>
-          </li>
-        </ul>
+        <div className="tile-info">
+          <ul>
+            <li key={job._id} className="job">
+              <Link to={`/jobapplications/${job._id}`}>
+                <h3>{job.Company}</h3>
+                <h4>Date Applied: {job.DateApplied}</h4>
+                <p>{job.PositionTitle}</p>
+                <p>Contacted: {job.Contacted}</p>
+              </Link>
+              <a
+                href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}
+              >
+                <button class="btn btn-outline-dark">Follow Up</button>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     ));
   };
