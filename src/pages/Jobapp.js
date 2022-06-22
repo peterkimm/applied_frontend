@@ -69,13 +69,13 @@ const Jobapp = (props) => {
       <p>Contact Info: {job.ContactInfo}</p>
       <p>Contacted: {job.Contacted}</p>
       <div className="show-buttons">
-        <a href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}>
-          <button>Follow Up</button>
+        <a  href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}> 
+          <button1 className="btn btn-outline-success">Follow Up</button1>
         </a>
         <div className="edit-delete-buttons">
-          <button onClick={() => setHideEditForm(false)}>Edit Job</button>
+          <button  className="btn btn-outline-dark" onClick={() => setHideEditForm(false)}>Edit Job</button>
 
-          <button id="delete" onClick={() => handleRemoveJob(job._id)}>
+          <button id="delete"  className="btn btn-outline-danger" onClick={() => handleRemoveJob(job._id)}>
             Delete Job
           </button>
         </div>
