@@ -57,10 +57,13 @@ const Jobapp = (props) => {
   const [hideEditForm, setHideEditForm] = useState(true);
 
   return (
-    <div className="single-job">
-      <div className="show-image">
-        <img src={job.Logo} className="show-logo" alt={job.Company}/>
-      </div>
+    <div className="single-job shadow mb-5 rounded">
+      <img
+        src={job.Logo}
+        className="show-logo shadow mb-4 rounded"
+        alt={job.Company}
+      />
+
       <h1>{job.Company}</h1>
       <h2>{job.PositionTitle}</h2>
       <h3>{job.Description}</h3>
@@ -69,13 +72,22 @@ const Jobapp = (props) => {
       <p>Contact Info: {job.ContactInfo}</p>
       <p>Contacted: {job.Contacted}</p>
       <div className="show-buttons">
-        <a  href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}> 
+        <a href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}>
           <button1 className="btn btn-outline-success">Follow Up</button1>
         </a>
         <div className="edit-delete-buttons">
-          <button  className="btn btn-outline-dark" onClick={() => setHideEditForm(false)}>Edit Job</button>
+          <button
+            className="btn btn-outline-dark"
+            onClick={() => setHideEditForm(false)}
+          >
+            Edit Job
+          </button>
 
-          <button id="delete"  className="btn btn-outline-danger" onClick={() => handleRemoveJob(job._id)}>
+          <button
+            id="delete"
+            className="btn btn-outline-danger"
+            onClick={() => handleRemoveJob(job._id)}
+          >
             Delete Job
           </button>
         </div>
@@ -86,6 +98,7 @@ const Jobapp = (props) => {
             <legend>Company Info</legend>
             <label for="company">Company</label>
             <input
+              className="form-control"
               value={editForm.Company}
               onChange={handleChange}
               name="Company"
@@ -95,6 +108,7 @@ const Jobapp = (props) => {
 
             <label for="contact">Email</label>
             <input
+              className="form-control"
               value={editForm.ContactInfo}
               onChange={handleChange}
               name="ContactInfo"
@@ -103,6 +117,7 @@ const Jobapp = (props) => {
             />
             <label for="logo">Logo Image URL</label>
             <input
+              className="form-control"
               value={editForm.Logo}
               onChange={handleChange}
               name="Logo"
@@ -110,10 +125,12 @@ const Jobapp = (props) => {
               id="logo"
             />
           </fieldset>
+          <br/>
           <fieldset className="job-info">
             <legend>Job Info</legend>
             <label for="position">Position Title</label>
             <input
+              className="form-control"
               value={editForm.PositionTitle}
               onChange={handleChange}
               name="PositionTitle"
@@ -122,6 +139,7 @@ const Jobapp = (props) => {
             />
             <label for="date">Date Applied</label>
             <input
+              className="form-control"
               value={editForm.DateApplied}
               onChange={handleChange}
               name="DateApplied"
@@ -130,6 +148,7 @@ const Jobapp = (props) => {
             />
             <label for="description">Description</label>
             <input
+              className="form-control"
               value={editForm.Description}
               onChange={handleChange}
               name="Description"
@@ -138,6 +157,7 @@ const Jobapp = (props) => {
             />
             <label for="salary">Salary</label>
             <input
+              className="form-control"
               value={editForm.Salary}
               onChange={handleChange}
               name="Salary"
@@ -146,6 +166,7 @@ const Jobapp = (props) => {
             />
             <label for="contacted">Contacted</label>
             <input
+              className="form-control"
               value={editForm.Contacted}
               onChange={handleChange}
               name="Contacted"
@@ -153,7 +174,12 @@ const Jobapp = (props) => {
               id="contacted"
             />
           </fieldset>
-          <input type="submit" value="Update Job" />
+          <br />
+          <input
+            type="submit"
+            value="Update Job"
+            className="btn btn-outline-dark"
+          />
         </form>
       </div>
     </div>
