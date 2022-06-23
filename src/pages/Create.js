@@ -36,7 +36,7 @@ const Create = (props) => {
     props.history.push("/");
   };
   return (
-    <section>
+    <div className="new-job-page shadow mb-5 rounded">
       <h1>Create New Job</h1>
       {props.user && (
         <div className="newJob">
@@ -45,6 +45,7 @@ const Create = (props) => {
               <legend>Company Info</legend>
               <label for="company">Company</label>
               <input
+              className="form-control"
                 value={newForm.Company}
                 onChange={handleChange}
                 name="Company"
@@ -53,6 +54,7 @@ const Create = (props) => {
               />
               <label for="contact">Email</label>
               <input
+              className="form-control"
                 value={newForm.ContactInfo}
                 onChange={handleChange}
                 name="ContactInfo"
@@ -61,6 +63,7 @@ const Create = (props) => {
               />
               <label for="logo">Logo Image URL</label>
               <input
+              className="form-control"
                 value={newForm.Logo}
                 onChange={handleChange}
                 name="Logo"
@@ -68,10 +71,12 @@ const Create = (props) => {
                 id="logo"
               />
             </fieldset>
+            <br/>
             <fieldset className="job-info">
               <legend>Job Info</legend>
               <label for="position">Position Title</label>
               <input
+              className="form-control"
                 value={newForm.PositionTitle}
                 onChange={handleChange}
                 name="PositionTitle"
@@ -80,6 +85,7 @@ const Create = (props) => {
               />
               <label for="date">Date Applied</label>
               <input
+              className="form-control"
                 value={newForm.DateApplied}
                 onChange={handleChange}
                 name="DateApplied"
@@ -88,6 +94,7 @@ const Create = (props) => {
               />
               <label for="description">Description</label>
               <input
+              className="form-control"
                 value={newForm.Description}
                 onChange={handleChange}
                 name="Description"
@@ -96,6 +103,7 @@ const Create = (props) => {
               />
               <label for="salary">Salary</label>
               <input
+              className="form-control"
                 value={newForm.Salary}
                 onChange={handleChange}
                 name="Salary"
@@ -104,6 +112,7 @@ const Create = (props) => {
               />
               <label for="contacted">Contacted</label>
               <input
+              className="form-control"
                 value={newForm.Contacted}
                 onChange={handleChange}
                 name="Contacted"
@@ -111,12 +120,12 @@ const Create = (props) => {
                 id="contacted"
               />
               <br />
-              <input type="submit" value="Add Job" />
+              <input type="submit" value="Add Job" className="btn btn-outline-dark"/>
             </fieldset>
           </form>
         </div>
       )}
-    </section>
+    </div>
   );
 };
 

@@ -13,7 +13,7 @@ import { Route } from "react-router-dom";
 const Main = (props) => {
   const [jobs, setJobs] = useState(null);
 
-  const URL = 'https://applied-b.herokuapp.com/jobapplications';
+  const URL = 'https://applied-b.herokuapp.com/jobapplications/';
 
   const getJobs = async () => {
     if (!props.user) return;

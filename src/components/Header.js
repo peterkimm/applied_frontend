@@ -20,10 +20,12 @@ const Header = (props) => {
         }} >
     <nav className="navbar navbar-brand shadow-sm p-1 mb-4">
     <Link to='/' className="navbar-brand">
-        <img src="https://github.com/peterkimm/applied_frontend/blob/master/src/images/applied-logo.png?raw=true" height={40} alt="applied logo"/>    </Link>
+
+        <img src="https://raw.githubusercontent.com/peterkimm/applied_frontend/a8b369575db2121f2d65a3df3ab6ddec3320d0d7/src/images/logo-no-text.png" height={40} alt="applied logo"/>    </Link>
     <Link to='/' className="Link">
         <IoClipboardOutline className="icon"/>
         <div className="text dashIcon">Dashboard</div>
+
     </Link>
      <Link to='/jobapplications' className="Link">
          <IoApps className="icon"/>

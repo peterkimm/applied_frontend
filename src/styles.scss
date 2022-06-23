@@ -1,9 +1,30 @@
+
+
 // Variables
 $mainColor: #9ecae3;
 $redColor: #d63230;
 
 @mixin job-tiles {
   background-color: #7bbde2;
+}
+@mixin form {
+  .company-info,
+  .job-info {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    input[type="text"]:focus {
+      border: 1px solid $mainColor;
+      border: none;
+      padding: 8px;
+      border-radius: 6px;
+    }
+  }
+  .btn {
+    width: 195px;
+    margin: 0 auto;
+  }
 }
 
 @keyframes login-grow {
@@ -17,7 +38,13 @@ $redColor: #d63230;
 
 .App {
   text-align: center;
-  font-family: 'Mukta', sans-serif;
+  font-family: "Mukta", sans-serif;
+  // BACKGROUND IMAGE
+  background-image: url("https://i.imgur.com/mxZ0wpc.jpg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-attachment: fixed;
+  background-position: bottom right;
 }
 // LOGIN PAGE //
 .login-page {
@@ -39,7 +66,7 @@ $redColor: #d63230;
 .login-footer {
   animation-name: login-grow;
   animation-duration: 3s;
-  }
+}
 // NAVBAR //
 nav {
   width: 100vw;
@@ -110,11 +137,13 @@ nav {
   justify-content: center;
   gap: 10px;
   margin: 10px;
-  
+  margin-bottom: 66px;
+
   .job-tile {
     width: 40%;
     // border: 1px solid black;
     background-color: #cde6f5;
+    text-align: left;
     .job-tile-heading {
       display: flex;
       flex-direction: row;
@@ -130,43 +159,80 @@ nav {
     img {
       width: 20vw;
       height: auto;
+      margin: 10px 0 0 0;
     }
     .job {
       list-style: none;
     }
   }
 }
-.tile-info {
-  a:link{
-text-decoration: none;
+
+.job {
+  a:link {
+    text-decoration: none;
+    color: black;
   }
-  a:visited{
+  a:visited {
     text-decoration: none;
   }
   a:hover {
     text-decoration: none;
   }
 }
+
+.job-tile:hover {
+  transform: scale(1.08);
+  background-color: #7bbde2;
+}
+
+ul {
+  padding: 0;
+  text-align: center;
+}
+
 .profileImage {
   border-radius: 50%;
 }
 
-//show page 
-.editFormOn{
-  display:block;
-  opacity: 1;
-  padding-bottom: 5rem;
+
+.single-job {
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 40px;
+  }
 }
-.editFormOff{
+.editFormOn {
+  display: block;
+}
+// SHOW PAGE //
+.editFormOn {
+  opacity: 1;
+  padding: 30px;
+  margin-bottom: 100px;
+  @include form;
+}
+.editFormOff {
   display: none;
   opacity: 0;
-
+}
+.single-job {
+  background-color: #cde6f5;
+  margin-bottom: 70px;
+  .show-logo {
+    width: 50vw;
+    height: auto;
+    padding: 0px;
+    margin: 10px;
+  }
 }
 // CREATE PAGE //
-.company-info,
-.job-info {
-  display: flex;
-  flex-direction: column;
+.new-job-page {
+  background-color: #cde6f5;
+  padding: 30px;
+  margin-bottom: 100px;
+  @include form;
 }
 
 // FOOTER //
@@ -179,16 +245,21 @@ footer {
   bottom: 0px;
 }
 
-button{
+button {
   margin: 10px;
 }
 button1 {
   width: 195px;
-
 }
 
-img.show-logo{
-  width:  500px;
-  height: 280px;
+img.show-logo {
+  width: 100%;
   object-fit: cover;
+}
+
+li {
+  cursor:pointer;
+}
+.profile {
+  font-family: 'Stick No Bills', sans-serif;
 }
