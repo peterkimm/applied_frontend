@@ -12,7 +12,7 @@ $redColor: #d63230;
     flex-direction: column;
     width: 300px;
     margin: 0 auto;
-    input[type=text]:focus {
+    input[type="text"]:focus {
       border: 1px solid $mainColor;
       border: none;
       padding: 8px;
@@ -36,7 +36,7 @@ $redColor: #d63230;
 
 .App {
   text-align: center;
-  font-family: 'Mukta', sans-serif;
+  font-family: "Mukta", sans-serif;
   // BACKGROUND IMAGE
   background-image: url("https://i.imgur.com/mxZ0wpc.jpg");
   background-repeat: no-repeat;
@@ -127,9 +127,9 @@ nav {
 }
 
 .job {
-  a:link{
-text-decoration: none;
-color: black;
+  a:link {
+    text-decoration: none;
+    color: black;
   }
   a:visited {
     text-decoration: none;
@@ -139,9 +139,9 @@ color: black;
   }
 }
 
-.job-tile:hover{
+.job-tile:hover {
   transform: scale(1.08);
-  background-color:#7bbde2;
+  background-color: #7bbde2;
 }
 
 ul {
@@ -153,21 +153,19 @@ ul {
   border-radius: 50%;
 }
 
-
- .single-job {
-   h1 {
-     font-size: 60px;
-   }
-   h2{
-     font-size: 40px;
-   }
- }
-.editFormOn{
-  display:block;
-
+.single-job {
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+}
+.editFormOn {
+  display: block;
+}
 // SHOW PAGE //
 .editFormOn {
-
   opacity: 1;
   padding: 30px;
   margin-bottom: 100px;
@@ -212,8 +210,7 @@ button1 {
   width: 195px;
 }
 
-
-img.show-logo{
-  width:  100%;
+img.show-logo {
+  width: 100%;
   object-fit: cover;
 }
