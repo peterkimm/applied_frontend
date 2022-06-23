@@ -64,12 +64,11 @@ Users can organize their job applications based on date
 [Netlify](enter netlify link here)
 
 * You can view the repositories here:
-Frontend
-[Github.com](https://github.com/peterkimm/applied_frontend)
-Backend
-[Github.com](https://github.com/peterkimm/applied_backend)
+* [Frontend](https://github.com/peterkimm/applied_frontend)
+* [Backend](https://github.com/peterkimm/applied_backend)
 
     
 ## Works Cited:
 Ashley Sands - wonder woman extraordinaire, heroku/firebase master
+
 Daniel Scott - with those firebase video walk-throughs
