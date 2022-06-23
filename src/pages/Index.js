@@ -3,6 +3,34 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Index = (props) => {
+  const legend = () => {
+    return (
+      <>
+        <div className="legend-tile">
+          <div
+            className="legend-color shadow rounded"
+            style={{ backgroundColor: "crimson" }}
+          ></div>
+          <p>Applied more than 14 days ago</p>
+        </div>
+        <div className="legend-tile">
+          <div
+            className="legend-color shadow rounded"
+            style={{ backgroundColor: "gold" }}
+          ></div>
+          <p>Applied between 7 and 14 days ago</p>
+        </div>
+        <div className="legend-tile">
+          <div
+            className="legend-color shadow rounded"
+            style={{ backgroundColor: "green" }}
+          ></div>
+          <p>Applied in last 7 days</p>
+        </div>
+      </>
+    );
+  };
+
   const parseDate = (date) => {
     let ymd = date.split("-");
     return new Date(ymd[0], ymd[1] - 1, ymd[2]);
@@ -30,22 +58,22 @@ const Index = (props) => {
   const [listJobs, setListJobs] = useState([]);
 
   useEffect(() => {
-    setListJobs(props.jobs)
-  }, [])
+    setListJobs(props.jobs);
+  }, []);
 
   const oldToNew = () => {
-    const sorted = [...listJobs].sort((a,b) => {
-    return parseDate(a.DateApplied) - parseDate(b.DateApplied)
-  })
-  setListJobs(sorted);
-  }
+    const sorted = [...listJobs].sort((a, b) => {
+      return parseDate(a.DateApplied) - parseDate(b.DateApplied);
+    });
+    setListJobs(sorted);
+  };
 
-  const newToOld= () => {
-    const sorted = [...listJobs].sort((a,b) => {
-      return parseDate(b.DateApplied) - parseDate(a.DateApplied)
-    })
-    setListJobs(sorted)
-  }
+  const newToOld = () => {
+    const sorted = [...listJobs].sort((a, b) => {
+      return parseDate(b.DateApplied) - parseDate(a.DateApplied);
+    });
+    setListJobs(sorted);
+  };
 
   const loaded = (jobs) => {
     return jobs.map((job) => (
@@ -82,14 +110,19 @@ const Index = (props) => {
 
   return (
     <>
-    <h1>My Jobs</h1>
-    <div className='sort'>
-    <button className="btn btn-outline-dark" onClick={oldToNew}>Oldest to newest</button>
-    <button className="btn btn-outline-dark" onClick={newToOld}>Newest to oldest</button>
-    </div>
-    <div className="index-jobs">
-    {props.jobs ? loaded(listJobs) : loading()}
-    </div>
+      <h1>My Jobs</h1>
+      <div className="legend-index">{legend()}</div>
+      <div className="sort">
+        <button className="btn btn-outline-dark" onClick={oldToNew}>
+          Oldest to newest
+        </button>
+        <button className="btn btn-outline-dark" onClick={newToOld}>
+          Newest to oldest
+        </button>
+      </div>
+      <div className="index-jobs">
+        {props.jobs ? loaded(listJobs) : loading()}
+      </div>
     </>
   );
 };
