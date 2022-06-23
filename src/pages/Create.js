@@ -111,7 +111,7 @@ const Create = (props) => {
                 id="contacted"
               />
               <br />
-              <input type="submit" value="Add Job" />
+              <input className="btn btn-outline-dark" type="submit" value="Add Job" />
             </fieldset>
           </form>
         </div>

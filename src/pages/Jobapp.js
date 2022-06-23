@@ -153,7 +153,7 @@ const Jobapp = (props) => {
               id="contacted"
             />
           </fieldset>
-          <input type="submit" value="Update Job" />
+          <input className="btn btn-outline-dark" type="submit" value="Update Job" />
         </form>
       </div>
     </div>
