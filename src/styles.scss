@@ -5,6 +5,25 @@ $redColor: #d63230;
 @mixin job-tiles {
   background-color: #7bbde2;
 }
+@mixin form {
+  .company-info,
+  .job-info {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    input[type=text]:focus {
+      border: 1px solid $mainColor;
+      border: none;
+      padding: 8px;
+      border-radius: 6px;
+    }
+  }
+  .btn {
+    width: 195px;
+    margin: 0 auto;
+  }
+}
 
 @keyframes login-grow {
   from {
@@ -45,7 +64,7 @@ $redColor: #d63230;
 .login-footer {
   animation-name: login-grow;
   animation-duration: 3s;
-  }
+}
 // NAVBAR //
 nav {
   width: 100vw;
@@ -77,7 +96,8 @@ nav {
   justify-content: center;
   gap: 10px;
   margin: 10px;
-  
+  margin-bottom: 66px;
+
   .job-tile {
     width: 40%;
     // border: 1px solid black;
@@ -105,12 +125,13 @@ nav {
     }
   }
 }
+
 .job {
   a:link{
 text-decoration: none;
 color: black;
   }
-  a:visited{
+  a:visited {
     text-decoration: none;
   }
   a:hover {
@@ -132,7 +153,7 @@ ul {
   border-radius: 50%;
 }
 
-//show page
+
  .single-job {
    h1 {
      font-size: 60px;
@@ -143,19 +164,35 @@ ul {
  }
 .editFormOn{
   display:block;
+
+// SHOW PAGE //
+.editFormOn {
+
   opacity: 1;
-  padding-bottom: 5rem;
+  padding: 30px;
+  margin-bottom: 100px;
+  @include form;
 }
-.editFormOff{
+.editFormOff {
   display: none;
   opacity: 0;
-
+}
+.single-job {
+  background-color: #cde6f5;
+  margin-bottom: 70px;
+  .show-logo {
+    width: 50vw;
+    height: auto;
+    padding: 0px;
+    margin: 10px;
+  }
 }
 // CREATE PAGE //
-.company-info,
-.job-info {
-  display: flex;
-  flex-direction: column;
+.new-job-page {
+  background-color: #cde6f5;
+  padding: 30px;
+  margin-bottom: 100px;
+  @include form;
 }
 
 // FOOTER //
@@ -168,13 +205,13 @@ footer {
   bottom: 0px;
 }
 
-button{
+button {
   margin: 10px;
 }
 button1 {
   width: 195px;
-
 }
+
 
 img.show-logo{
   width:  100%;
