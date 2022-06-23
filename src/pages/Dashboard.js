@@ -78,17 +78,20 @@ const Dashboard = (props) => {
       </div>
     ));
   };
+  
   return (
     <div className="dashboard">
       <div className="profile">
         {props.user ? (
           <>
-            <h2>Welcome, {props.user.displayName}</h2>
+
             <img
               className="profileImage"
               src={props.user.photoURL}
               alt={props.user.displayName}
             />
+            <h2>Welcome, {props.user.displayName}</h2>
+
           </>
         ) : (
           <h2>Login to see your jobs!</h2>
@@ -108,5 +111,6 @@ const Dashboard = (props) => {
     </div>
   );
 };
+
 
 export default Dashboard;

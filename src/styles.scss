@@ -1,3 +1,5 @@
+
+
 // Variables
 $mainColor: #9ecae3;
 $redColor: #d63230;
@@ -54,7 +56,7 @@ $redColor: #d63230;
   // BACKGROUND IMAGE
   background-image: url("https://i.imgur.com/mxZ0wpc.jpg");
   background-repeat: no-repeat;
-  background-size: 300px 200px;
+  background-size: 50%;
   background-attachment: fixed;
   background-position: bottom right;
 }
@@ -62,7 +64,7 @@ $redColor: #d63230;
 .login-page {
   animation-name: login-grow;
   animation-duration: 3s;
-  background-color: $mainColor;
+  background-image: linear-gradient(#5680E9, #84CEEB, #5AB9EA, #C1C8E4, #8860D0);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,10 +85,13 @@ $redColor: #d63230;
 nav {
   width: 100vw;
   background-color: $mainColor;
+  
   a {
     font-size: 15px;
     text-decoration: none;
     color: black;
+   
+  
   }
   .navbar-brand {
     margin-left: 15px;
@@ -100,9 +105,44 @@ nav {
       font-size: 15px;
     }
   }
+  .Link {
+    margin: 0 auto;
+
+  }
+
+ .Link:hover .allIcons {
+   transform: translateY(-12px);
+   transition: 0.3s;
+ }
+
+ .text {
+  position: absolute;
+  color: black;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(7px);
+  transform: translateX(-10px);
+ }
+
+
+ .Link:hover .text {
+  opacity: 1;
+  transform: translateY(-2px);
+  transform: translateX(-10px);
+ }
+
+ .Link:hover .dashIcon {
+  transform: translateX(-18px)
+}
+
+.Link:hover .log {
+  transform: translateY(-10px);
+}
+ 
 }
 
 // DASHBOARD & INDEX//
+
 .dashboard-jobs,
 .index-jobs {
   display: flex;
@@ -166,6 +206,7 @@ ul {
 .profileImage {
   border-radius: 50%;
 }
+
 
 .single-job {
   h1 {
@@ -249,4 +290,11 @@ button1 {
 img.show-logo {
   width: 100%;
   object-fit: cover;
+}
+
+li {
+  cursor:pointer;
+}
+.profile {
+  font-family: 'Stick No Bills', sans-serif;
 }
