@@ -26,7 +26,21 @@ $redColor: #d63230;
     margin: 0 auto;
   }
 }
-
+@mixin legend {
+  font-size: 11px;
+  display: flex;
+  justify-content: space-evenly;
+  .legend-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .legend-color {
+      width: 15px;
+      height: 15px;
+      margin: 0 auto;
+    }
+  }
+}
 @keyframes login-grow {
   from {
     opacity: 0;
@@ -127,9 +141,8 @@ nav {
  
 }
 
+// DASHBOARD & INDEX//
 
-
-// DASHBOARD //
 .dashboard-jobs,
 .index-jobs {
   display: flex;
@@ -203,10 +216,32 @@ ul {
     font-size: 40px;
   }
 }
+.legend-index {
+  @include legend;
+  p {
+    width: 70px;
+  }
+}
+.legend-dash {
+  @include legend;
+  justify-content: center;
+  margin: 10px;
+  .legend-tile {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.dash-message {
+  font-size: 20px;
+  text-align: center;
+  margin: 30px;
+}
+
+// SHOW PAGE //
 .editFormOn {
   display: block;
 }
-// SHOW PAGE //
+
 .editFormOn {
   opacity: 1;
   padding: 30px;
