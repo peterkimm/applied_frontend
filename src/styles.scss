@@ -1,3 +1,5 @@
+
+
 // Variables
 $mainColor: #9ecae3;
 $redColor: #d63230;
@@ -164,7 +166,7 @@ ul {
  }
 .editFormOn{
   display:block;
-
+} 
 // SHOW PAGE //
 .editFormOn {
 
@@ -216,4 +218,11 @@ button1 {
 img.show-logo{
   width:  100%;
   object-fit: cover;
+}
+
+li {
+  cursor:pointer;
+}
+.profile {
+  font-family: 'Stick No Bills', sans-serif;
 }
