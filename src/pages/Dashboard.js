@@ -50,27 +50,27 @@ const Dashboard = (props) => {
   const loaded = () => {
     let allRedJobs = redJobs();
     return allRedJobs.map((job) => (
-      <div className="job-tile shadow p-3 mb-5 rounded">
+      <div className="job-tile shadow p-3 rounded">
+        <div
+          className="job-color shadow p-3 rounded"
+          style={{ backgroundColor: getColor(job) }}
+        ></div>
         <div className="job-tile-heading">
-          <div
-            className="job-color shadow p-3 mb-5 rounded"
-            style={{ backgroundColor: getColor(job) }}
-          ></div>
           <img className="job-tile-logo" src={job.Logo} alt={job.Company}></img>
         </div>
         <div className="tile-info">
           <ul>
             <li key={job._id} className="job">
               <Link to={`/jobapplications/${job._id}`}>
-                <h3>{job.Company}</h3>
-                <h4>Date Applied: {job.DateApplied}</h4>
-                <p>{job.PositionTitle}</p>
-                <p>Contacted: {job.Contacted}</p>
+                <h5>{job.DateApplied}</h5>
+                <h2>{job.Company}</h2>
+                <h5>{job.PositionTitle}</h5>
+                <h6>Contacted: {job.Contacted}</h6>
               </Link>
               <a
                 href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}
               >
-                <button className="btn btn-outline-dark">Follow Up</button>
+                <button className="btn btn-outline-dark follow-up">Follow Up</button>
               </a>
             </li>
           </ul>
@@ -78,20 +78,19 @@ const Dashboard = (props) => {
       </div>
     ));
   };
-  
+
   return (
     <div className="dashboard">
       <div className="profile">
         {props.user ? (
           <>
-
             <img
               className="profileImage"
               src={props.user.photoURL}
               alt={props.user.displayName}
             />
+           <br/>
             <h2>Welcome, {props.user.displayName}</h2>
-
           </>
         ) : (
           <h2>Login to see your jobs!</h2>
@@ -105,12 +104,11 @@ const Dashboard = (props) => {
         </>
       ) : (
         <div className="dash-message">
-        <p>Job applied more than 2 weeks ago will appear here!</p>
+          <p>Job applied more than 2 weeks ago will appear here!</p>
         </div>
       )}
     </div>
   );
 };
-
 
 export default Dashboard;

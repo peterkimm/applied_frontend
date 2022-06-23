@@ -77,12 +77,12 @@ const Index = (props) => {
 
   const loaded = (jobs) => {
     return jobs.map((job) => (
-      <div className="job-tile shadow p-3 mb-5 rounded">
+      <div className="job-tile shadow p-3 rounded">
+        <div
+          className="job-color shadow p-3 rounded"
+          style={{ backgroundColor: getColor(job) }}
+        ></div>
         <div className="job-tile-heading">
-          <div
-            className="job-color shadow p-3 mb-5 rounded"
-            style={{ backgroundColor: getColor(job) }}
-          ></div>
           <img className="job-tile-logo" src={job.Logo}></img>
         </div>
         <ul>
@@ -96,7 +96,7 @@ const Index = (props) => {
               </div>
             </Link>
             <a href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}>
-              <button className="btn btn-outline-dark">Follow Up</button>
+              <button className="btn btn-outline-dark follow-up">Follow Up</button>
             </a>
           </li>
         </ul>
