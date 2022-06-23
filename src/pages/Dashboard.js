@@ -18,9 +18,9 @@ const Dashboard = (props) => {
     if (diff < 8) {
       color = "green";
     } else if (diff >= 8 && diff < 14) {
-      color = "yellow";
+      color = "gold";
     } else {
-      color = "red";
+      color = "crimson";
     }
     return color;
   };
@@ -48,10 +48,10 @@ const Dashboard = (props) => {
           <ul>
             <li key={job._id} className="job">
               <Link to={`/jobapplications/${job._id}`}>
-                <h3>{job.Company}</h3>
-                <h4>Date Applied: {job.DateApplied}</h4>
-                <p>{job.PositionTitle}</p>
-                <p>Contacted: {job.Contacted}</p>
+                <h5>{job.Company}</h5>
+                <h2>Date Applied: {job.DateApplied}</h2>
+                <h5>{job.PositionTitle}</h5>
+                <h6>Contacted: {job.Contacted}</h6>
               </Link>
               <a
                 href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}

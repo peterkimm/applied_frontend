@@ -20,9 +20,9 @@ const Index = (props) => {
     if (diff < 8) {
       color = "green";
     } else if (diff >= 8 && diff < 14) {
-      color = "yellow";
+      color = "gold";
     } else {
-      color = "red";
+      color = "crimson";
     }
     return color;
   };
@@ -58,17 +58,17 @@ const Index = (props) => {
           <img className="job-tile-logo" src={job.Logo}></img>
         </div>
         <ul>
-          <li key={job._id} className="job">
+          <li key={job._id} className="job ">
             <Link to={`/jobapplications/${job._id}`}>
               <div>
-                <h2>{job.DateApplied}</h2>
+                <h5>{job.DateApplied}</h5>
                 <h2>{job.Company}</h2>
-                <h2>{job.PositionTitle}</h2>
-                <h2>{job.Contacted}</h2>
+                <h5>{job.PositionTitle}</h5>
+                <h6>Contacted: {job.Contacted}</h6>
               </div>
             </Link>
             <a href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}>
-              <button>Follow Up</button>
+              <button className="btn btn-outline-dark">Follow Up</button>
             </a>
           </li>
         </ul>
@@ -84,8 +84,8 @@ const Index = (props) => {
     <>
     <h1>My Jobs</h1>
     <div className='sort'>
-    <button onClick={oldToNew}>Oldest to newest</button>
-    <button onClick={newToOld}>Newest to oldest</button>
+    <button className="btn btn-outline-dark" onClick={oldToNew}>Oldest to newest</button>
+    <button className="btn btn-outline-dark" onClick={newToOld}>Newest to oldest</button>
     </div>
     <div className="index-jobs">
     {props.jobs ? loaded(listJobs) : loading()}

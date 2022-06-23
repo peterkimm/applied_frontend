@@ -36,7 +36,13 @@ $redColor: #d63230;
 
 .App {
   text-align: center;
-  font-family: "Mukta", sans-serif;
+  font-family: 'Mukta', sans-serif;
+  // BACKGROUND IMAGE
+  background-image: url("https://i.imgur.com/mxZ0wpc.jpg");
+  background-repeat: no-repeat;
+  background-size: 300px 200px;
+  background-attachment: fixed;
+  background-position: bottom right;
 }
 // LOGIN PAGE //
 .login-page {
@@ -96,6 +102,7 @@ nav {
     width: 40%;
     // border: 1px solid black;
     background-color: #cde6f5;
+    text-align: left;
     .job-tile-heading {
       display: flex;
       flex-direction: row;
@@ -111,15 +118,18 @@ nav {
     img {
       width: 20vw;
       height: auto;
+      margin: 10px 0 0 0;
     }
     .job {
       list-style: none;
     }
   }
 }
-.tile-info {
-  a:link {
-    text-decoration: none;
+
+.job {
+  a:link{
+text-decoration: none;
+color: black;
   }
   a:visited {
     text-decoration: none;
@@ -128,13 +138,36 @@ nav {
     text-decoration: none;
   }
 }
+
+.job-tile:hover{
+  transform: scale(1.08);
+  background-color:#7bbde2;
+}
+
+ul {
+  padding: 0;
+  text-align: center;
+}
+
 .profileImage {
   border-radius: 50%;
 }
 
+
+ .single-job {
+   h1 {
+     font-size: 60px;
+   }
+   h2{
+     font-size: 40px;
+   }
+ }
+.editFormOn{
+  display:block;
+
 // SHOW PAGE //
 .editFormOn {
-  display: block;
+
   opacity: 1;
   padding: 30px;
   margin-bottom: 100px;
@@ -179,8 +212,8 @@ button1 {
   width: 195px;
 }
 
-img.show-logo {
-  width: 500px;
-  height: 280px;
+
+img.show-logo{
+  width:  100%;
   object-fit: cover;
 }

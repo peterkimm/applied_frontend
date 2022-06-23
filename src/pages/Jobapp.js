@@ -174,6 +174,7 @@ const Jobapp = (props) => {
               id="contacted"
             />
           </fieldset>
+
           <br />
           <input
             type="submit"
