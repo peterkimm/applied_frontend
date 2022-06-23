@@ -18,9 +18,9 @@ const Dashboard = (props) => {
     if (diff < 8) {
       color = "green";
     } else if (diff >= 8 && diff < 14) {
-      color = "gold";
+      color = "yellow";
     } else {
-      color = "crimson";
+      color = "red";
     }
     return color;
   };
@@ -28,13 +28,15 @@ const Dashboard = (props) => {
   const redJobs = () => {
     let allRedJobs = [];
     props.jobs.map((job) => {
-      if (getColor(job) === "red") allRedJobs.push(job);
-    });
-    return allRedJobs;
+      if (getColor(job) === 'red') (
+        allRedJobs.push(job)
+      );          
+      });
+      return allRedJobs
   };
 
   const loaded = () => {
-    let allRedJobs = redJobs();
+    let allRedJobs =redJobs();
     return allRedJobs.map((job) => (
       <div className="job-tile shadow p-3 mb-5 rounded">
         <div className="job-tile-heading">
@@ -42,16 +44,16 @@ const Dashboard = (props) => {
             className="job-color shadow p-3 mb-5 rounded"
             style={{ backgroundColor: getColor(job) }}
           ></div>
-          <img className="job-tile-logo" src={job.Logo}></img>
+          <img className="job-tile-logo" src={job.Logo} alt={job.Company}></img>
         </div>
         <div className="tile-info">
           <ul>
             <li key={job._id} className="job">
               <Link to={`/jobapplications/${job._id}`}>
-                <h5>{job.Company}</h5>
-                <h2>Date Applied: {job.DateApplied}</h2>
-                <h5>{job.PositionTitle}</h5>
-                <h6>Contacted: {job.Contacted}</h6>
+                <h3>{job.Company}</h3>
+                <h4>Date Applied: {job.DateApplied}</h4>
+                <p>{job.PositionTitle}</p>
+                <p>Contacted: {job.Contacted}</p>
               </Link>
               <a
                 href={`mailto:${job.ContactInfo}?subject=${job.PositionTitle}`}
@@ -70,20 +72,23 @@ const Dashboard = (props) => {
       <div className="profile">
         {props.user ? (
           <>
-            
+
             <img
               className="profileImage"
               src={props.user.photoURL}
               alt={props.user.displayName}
             />
             <h2>Welcome, {props.user.displayName}</h2>
+
           </>
         ) : (
           <h2>Login to see your jobs!</h2>
         )}
       </div>
 
-      <div className="dashboard-jobs">{props.jobs && loaded()}</div>
+      <div className="dashboard-jobs">
+        {props.jobs && loaded()}
+        </div>
     </div>
   );
 };
