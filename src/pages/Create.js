@@ -23,6 +23,7 @@ const Create = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     props.createJobs(newForm);
+    
     setNewForm({
       DateApplied: "",
       PositionTitle: "",
