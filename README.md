@@ -13,12 +13,14 @@ A full-stack job application tracker that will show you your applications and le
 <img src="https://i.imgur.com/xONbSGb.png" alt="Dashboard"/>
 <img src="https://i.imgur.com/8oyH5iJ.png" alt="All Jobs"/>
 <img src="https://i.imgur.com/EO2rM7F.png" alt="New form"/>
+
 ## Table of Contents
 * [Technologies Used](#technologiesused)
 * [Features](#features)
 * [Design](#design)
 * [Future Enhancements](#futureenhancements)
 * [Deployed App](#deployment)
+* [Team](#team)
 
 ## <a name="technologiesused"></a>Technologies Used
 * Express
@@ -71,7 +73,22 @@ A full-stack job application tracker that will show you your applications and le
 * [Frontend](https://github.com/peterkimm/applied_frontend)
 * [Backend](https://github.com/peterkimm/applied_backend)
 
-    
+
+## <a name="team"></a>Team
+* Laura Kelly: Project Manager
+[linkedin](https://www.linkedin.com/in/lkelly-laura/)
+[github](https://github.com/laurakelly1)
+* Mohamed Hamka: Lead Back-end Dev
+[linkedin](https://www.linkedin.com/in/mohamed-hamka/)
+[github](https://github.com/moehamka34)
+* Lindsey Dukles: Lead Front-end Dev
+[linkedin](https://www.linkedin.com/in/lindsey-dukles/)
+[github](https://github.com/ldukles)
+* Peter Kim: Release Manger
+[linkedin](https://www.linkedin.com/in/peterkims/)
+[github](https://github.com/peterkimm)
+
+
 ## Works Cited:
 Ashley Sands - wonder woman extraordinaire, heroku/firebase master
 
